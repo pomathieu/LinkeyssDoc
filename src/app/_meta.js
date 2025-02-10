@@ -8,7 +8,11 @@ export default {
     type: 'page',
   },
   promoteurs: {
-    title: 'Promoteur',
+    title: 'Promoteurs',
+    type: 'page',
+  },
+  vendeurs: {
+    title: 'Vendeurs',
     type: 'page',
   },
 };
