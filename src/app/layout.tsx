@@ -25,7 +25,7 @@ export default async function RootLayout({
 }>) {
   const session = await auth();
 
-  if (!session) {
+  if (!session && isProduction) {
     return redirect('https://www.linkeyss.com/login');
   }
 
