@@ -1,6 +1,6 @@
 export default {
   index: {
-    title: 'Accueil',
+    title: 'Introduction',
     type: 'page',
   },
   architecture: {
