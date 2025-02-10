@@ -30,13 +30,12 @@ export default async function RootLayout({
       suppressHydrationWarning>
       <body className={` antialiased`}>
         <Layout
-          sidebar={{ autoCollapse: true }}
+          sidebar={{}}
           banner={banner}
           navbar={navbar}
           editLink={null}
           feedback={{ content: null }}
           pageMap={await getPageMap()}
-          navigation={false}
           footer={footer}>
           {children}
         </Layout>

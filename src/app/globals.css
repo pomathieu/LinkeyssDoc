@@ -1,2 +1,36 @@
 @import 'tailwindcss';
 @tailwind utilities;
+
+:root {
+  --sidebar-bg: #231515;
+  --sidebar-border: #e5e7eb;
+}
+
+.nextra-mobile-nav {
+  background-color: var(--sidebar-bg) !important;
+}
+
+/* Style pour les éléments de la sidebar */
+.nextra-mobile-nav .nextra-sidebar-footer {
+  background-color: var(--sidebar-bg);
+  border-color: var(--sidebar-border);
+}
+
+/* Style pour la barre de recherche */
+.nextra-mobile-nav .nextra-search input {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .nextra-mobile-nav .nextra-search input {
+  background-color: rgb(226, 15, 15);
+}
+
+.nextra-mobile-nav ul li a:hover,
+.nextra-mobile-nav ul li button:hover {
+  background-color: rgba(0, 0, 0, 0.719);
+}
+
+[data-theme='dark'] .nextra-mobile-nav ul li a:hover,
+[data-theme='dark'] .nextra-mobile-nav ul li button:hover {
+  background-color: rgba(15, 2, 2, 0.108);
+}
