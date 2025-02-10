@@ -4,7 +4,10 @@ import type { Metadata } from 'next';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import { getPageMap } from 'nextra/page-map';
 import { Banner, Head } from 'nextra/components';
-import { content } from '../../tailwind.config';
+import { auth } from './auth';
+import { redirect } from 'next/navigation';
+const isProduction = process.env.NODE_ENV === 'production';
+const mainAppUrl = isProduction ? 'https://www.linkeyss.com' : 'http://localhost:3000';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,6 +23,14 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
+  console.log('Current Session:', session);
+
+  if (!session?.user) {
+    console.log('No session found, redirecting to:', `${mainAppUrl}/login`);
+    redirect(`${mainAppUrl}/login`);
+  }
+
   return (
     <html
       lang="fr"
