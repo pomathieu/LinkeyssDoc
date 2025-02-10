@@ -24,7 +24,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth();
-  return redirect('https://www.linkeyss.com/login');
+
+  if (!session) {
+    return redirect('https://www.linkeyss.com/login');
+  }
 
   return (
     <html
