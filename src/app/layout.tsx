@@ -23,14 +23,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
-  console.log('Current Session:', session);
-
-  if (!session?.user) {
-    console.log('No session found, redirecting to:', `${mainAppUrl}/login`);
-    redirect(`${mainAppUrl}/login`);
-  }
-
   return (
     <html
       lang="fr"
